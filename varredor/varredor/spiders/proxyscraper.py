@@ -1,6 +1,7 @@
 # Explain concept below
 import scrapy
 
+
 class ProxyScraperSpider(scrapy.Spider):
     # identidade
     name = 'proxyscraper'
@@ -10,7 +11,7 @@ class ProxyScraperSpider(scrapy.Spider):
         urls = ['https://www.us-proxy.org/']
 
         for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse,meta={'next_url':urls[0]})
+            yield scrapy.Request(url=url, callback=self.parse, meta={'next_url': urls[0]})
 
     # Response
     def parse(self, response):
